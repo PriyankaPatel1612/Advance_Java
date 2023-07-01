@@ -1,0 +1,79 @@
+DDL-Data Definition Language
+{
+    outer structure
+    CREATE,ALTER,DROP
+}
+
+DML-Data Manipulation Language
+{
+    internal data structure
+    INSERT,UPDATE,DELETE 
+}
+
+DCL-Data Control Language
+{
+    DBA-database administrator
+    permissions
+    Grant,Revoke
+}
+Commit,Rollback
+TCL-Transaction Control Language
+{
+    subpart of DCL
+    Backup,Restore
+}
+
+DRL-Data Retreival Language
+{
+    SELECT
+}
+
+Tools for SQL
+{
+MS access
+SQL server
+MY SQL
+DB-2
+ORACLE
+}
+
+SQL Datatypes
+{
+    Java    Sql data types   Size
+    byte    tiny int         1byte
+    short   small int        2byte
+    int     int              4byte
+    long    big int          8byte
+    float   float            4byte
+    double  double           8byte
+    boolean bool/boolean     1byte
+    char    char/varchar/varchar2 1byte
+    and more...
+}
+
+if we have data bigger than the range of integer range 
+then we use
+for ex if we have to store 30 digits of integer data then we use 
+numeric(30)
+similary,
+decimal(30,5)
+char(20)
+varchar(20)
+varchar2(20)
+
+show databases;
+
+rename database-
+ALTER DATABASE old_dbname MODIFY NAME = new_dbname;
+
+change table column Datatype-
+ALTER TABLE tablename
+MODIFY COLUMN colname dataype
+
+change col name-
+ALTER TABLE tablename
+RENAME column colname to newcolname;
+
+insert values-
+INSERT INTO tablename
+values (1,'priyanka','111');
