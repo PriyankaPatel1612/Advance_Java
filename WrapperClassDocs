@@ -1,0 +1,78 @@
+There are 8 wrapper classes
+Byte
+Short
+Integer
+Long
+Float
+Double
+Boolean
+Character
+-->additional two classes
+BigInteger
+BigDecimal
+
+Number Class(it is a parent class of above written starting first six methods)
+it contains methods like
+byte byteValue()
+short shortValue()
+int intValue()
+long longValue()
+float floatValue()
+double doubleValue()
+
+Integer i = new Integer(100);
+System.out.println(i);   //prints value
+int x = i.intValue();      //type conversion(primitive to class/object Or class/object to primitive)
+
+Float constructors
+Float(float)
+Float(double)
+Float(String) throws NumberFormatException
+
+Double constructors
+Double(double)
+Double(String) throws NumberFormatException
+ 
+Note:
+public static double parseDouble/Float(String data)throws NumberFormatException
+If we want to convert string to primitive then we do parsing
+Double(String)throws NumberFormatException
+If we want to convert string to object then we use constructors
+
+Double d1 = new Double(10.0/0.0);    //infinity
+Double d2 = new Double(0.0/0.0);       //NaN
+boolean isInfinite()
+boolean isNan()
+
+-->Integer Class
+As we know in Integer class
+byte, short, int, long datatypes are available and methods like intValue and many more
+public static String toBinaryString(int value)   //convert int to binary
+public static String toOctalString(int value)
+public static String toHexString(int value)
+example:
+System.out.print(Integer.toBinaryString(100));
+
+-->Character Class
+public static boolean isDigit(char ch)
+public static boolean isLetter(char ch)
+public static boolean isUpperCase(char ch)
+public static boolean isLowerCase(ch)
+public static boolean isWhiteSpace(char ch)
+example:
+char a[] = {'a','B',' ','5','@'};
+System.out.print(Character.isDigit(a[n]));
+
+-->System Class
+public static PrintStream out;
+public static InputStream in;
+public static void exit(int value);   //0(succesfull termination) or 1(unsuccesful termination)
+public static void arrayCopy(sa, ss, da, ds, n);       //source address,source startindex, destination address, destination startindex, number
+public static void gc();    //garbage collector
+public static long currentTimeMillis();
+
+-->Object Class
+Object clone()
+boolean equals(Object ob)
+void finalize()       //behaves like destructor
+Class getClass()
