@@ -71,8 +71,30 @@ public static void arrayCopy(sa, ss, da, ds, n);       //source address,source s
 public static void gc();    //garbage collector
 public static long currentTimeMillis();
 
--->Object Class
-Object clone()
-boolean equals(Object ob)
+-->Object (class)
+Object clone()              //like  a copy constructor
+boolean equals(Object ob)          //compares obj
 void finalize()       //behaves like destructor
-Class getClass()
+Class getClass()         //return class 
+int hashcode()         //return hashcode
+void notify()               // this method is used to notify the method which is in waiting 
+void notifyAll()
+public string toString()   
+void wait()              //it will wait till it will not be notified
+void wait(long milisecond)        //if long waiting time is needed
+void wait(long milisecond, int nanoseconds)
+
+-->Class
+public static Class forName(String driverName) throws ClassNotFoundException
+in java when we have to load drivers we use forName method
+
+//drivers(make connection b/w hardwares and softwares)
+
+
+
+
+
+
+
+
+
