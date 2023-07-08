@@ -1,0 +1,14 @@
+-->Generic class
+
+-->Boxing
+when a data is passed to a reference variable using call by value concept then the system will convert the data into an object this process is called Boxing.
+here 100 will will converted into an object
+
+-->AutoBoxing
+When a primitive data member is passed to a reference variable using call by value concept then the value of primitive data member will be coverted into object this process of data conversion or type conversion is called 
+
+-->Unboxing
+when an object is return from a method to a refernce using return by value concept then the process in called unboxing.
+
+-->AutoUnboxing
+when an object is returned through a primitive data member using return by value concept then the object will be automaticaly converted into primitive this concept is called autounboxing.
