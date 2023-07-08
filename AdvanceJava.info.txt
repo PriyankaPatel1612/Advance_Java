@@ -1,0 +1,115 @@
+#collectionframework
+java.util(collection framework comes under this package)
+
+interfaces in collection framework
+Collection 
+   List(duplicate values allowed)
+   Set(no duplicate values)
+    SortedSet
+
+Map(key-value)
+ SortedMap
+
+Interfaces and their Implementation classes
+
+Set(interface)
+  HashSet
+  TreeSet
+  
+List(interface)
+  ArrayList
+  LinkedList
+  Stack
+  Vector
+
+Map(interface)
+  HashMap
+  TreeMap
+
+Methods in collection interfaces
+  boolean add(Object ob)
+  boolean addAll(Colection c)
+  void clear()
+  boolean contains(Object ob)
+  boolean containsAll(collection c)
+  boolean equals(Object)
+  int hashcode()
+  boolean isEmpty()
+  boolean remains(Object ob)
+  boolean removeAll(Collection c)
+  void retainAll(Collection c)
+  int size()
+  Object[]
+  toArray()
+
+  example
+  LinkedList<Integer> li = new LinkedList<Integer>();
+  l1.add();
+  Object i[] = li.toArray();
+
+-->Iterator iterator()
+  Interator itself is a interface
+-->Methods in iterator interface
+  boolean hasNext()
+  Object next()
+  void next()
+
+  example
+  Iterator i = li.iterator();
+  while(i.hasNext())
+  {
+    System.out.println(i.next());
+  }
+
+-->Set Interface
+   It is a child of collection interface it doesn't introduce any new method but it has a property that duplicate elements are not allowed in a set.
+
+-->List Interface
+   List is a another child of collection interface it supports duplicate element and it has an extra feature that user can access or insert element by their indexes as well.
+
+
+-->List interfaces method
+
+void add(int index, Object ob)
+ex-
+   l1[10,20,30,40,50]
+   l1.add(1,100);
+   l1[10,100,20,30,40,50]
+
+void addAll(int index, Collection c)   //add collection at given index
+int indexOf(Object Ob)  //returns index of given object
+int lastIndexOf(Object ob)   //starts counting from last and return index of given object
+boolean remove(Object ob)
+Object remove(int index)   //remove the obj at given index
+Object set(int index, Object ob)      //update or replace obj
+Object get(int index)
+
+-->SortedSet (no duplicate data)
+Object first()  //smallest element return
+Object last()       //largest element return
+SortedSet headSet(Object upto)    //(<)less than given obj
+SortedSet tallSet(Object from)         //(>=)greater than or equal to given object
+SortedSet subSet(Object from, Object upto)      //(>=,<)
+
+-->Map  (key:value)
+map is not a child of collection interface it has its own heierarchy that is based on key value association. 
+there key will always be unique but value can be duplicate.
+when we print map then it shows in curly bracets and collection in square bracets.
+
+Methods of Map interface
+
+boolean containsKey(Object key)
+boolean containsValue(Object Value)
+Set entrySet()
+Object get(int key)
+int hashCode()
+boolean isEmpty()
+Set keySet()
+Object put(Object key, Object value)
+Object remove(Object key)
+int size()
+Collection values()
+
+-->SortedMap
+firstKey()
+lastKey()
