@@ -110,6 +110,27 @@ Object remove(Object key)
 int size()
 Collection values()
 
--->SortedMap
+-->SortedMa
 firstKey()
 lastKey()
+
+1)TestSet1
+2)TestSet2
+3)TestTree1
+4)TestTree2
+5)TestList1
+6)TestArrayList1
+7)TestArrayList2
+8)TestArrayList3
+9)TestArrayListObject
+10)TestStack1
+11)TestMap2
+12)TestMap3
+13)TreeMapExample1
+14)TreeMapExample
+
+-->Vector
+Vector v1 = new Vector(10,2);
+boolean removeElement(Object element)
+Object removeElementAt(int index)
+void trimToSize(int newSize)
