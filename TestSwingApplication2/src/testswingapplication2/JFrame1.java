@@ -5,6 +5,7 @@ public class JFrame1 extends javax.swing.JFrame {
 
     public JFrame1() {
         initComponents();
+        loginFailedMessage.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -14,10 +15,12 @@ public class JFrame1 extends javax.swing.JFrame {
         loginPanel = new javax.swing.JPanel();
         userName = new javax.swing.JLabel();
         password = new javax.swing.JLabel();
-        passwordText = new javax.swing.JTextField();
         userNameText = new javax.swing.JTextField();
         resetLoginButton = new javax.swing.JButton();
         loginButton = new javax.swing.JButton();
+        passwordTextField = new javax.swing.JPasswordField();
+        exitButton = new javax.swing.JButton();
+        loginFailedMessage = new javax.swing.JLabel();
         registerPanel = new javax.swing.JPanel();
         lastName = new javax.swing.JLabel();
         age = new javax.swing.JLabel();
@@ -44,14 +47,12 @@ public class JFrame1 extends javax.swing.JFrame {
         password.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         password.setText("Password: ");
 
-        passwordText.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        passwordText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordTextActionPerformed(evt);
+        userNameText.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        userNameText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userNameTextMouseClicked(evt);
             }
         });
-
-        userNameText.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         userNameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userNameTextActionPerformed(evt);
@@ -62,7 +63,6 @@ public class JFrame1 extends javax.swing.JFrame {
         resetLoginButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         resetLoginButton.setForeground(new java.awt.Color(255, 255, 255));
         resetLoginButton.setText("Reset");
-        resetLoginButton.setActionCommand("Reset");
         resetLoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetLoginButtonActionPerformed(evt);
@@ -73,42 +73,78 @@ public class JFrame1 extends javax.swing.JFrame {
         loginButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         loginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginButton.setText("Login");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
+
+        passwordTextField.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        passwordTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordTextFieldActionPerformed(evt);
+            }
+        });
+
+        exitButton.setBackground(new java.awt.Color(255, 0, 0));
+        exitButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        exitButton.setText("Exit");
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitButtonActionPerformed(evt);
+            }
+        });
+
+        loginFailedMessage.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        loginFailedMessage.setForeground(new java.awt.Color(0, 0, 255));
+        loginFailedMessage.setText("Incorrect! Try Again..");
 
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
         loginPanelLayout.setHorizontalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addComponent(resetLoginButton)
-                        .addGap(40, 40, 40)
-                        .addComponent(loginButton))
-                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(userNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(exitButton)
+                            .addGroup(loginPanelLayout.createSequentialGroup()
+                                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(loginPanelLayout.createSequentialGroup()
+                                        .addComponent(resetLoginButton)
+                                        .addGap(40, 40, 40)
+                                        .addComponent(loginButton))
+                                    .addComponent(userNameText, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
+                                    .addComponent(passwordTextField)))))
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(244, 244, 244)
+                        .addComponent(loginFailedMessage)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         loginPanelLayout.setVerticalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(35, 35, 35)
+                .addComponent(loginFailedMessage)
+                .addGap(18, 18, 18)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(userNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(resetLoginButton)
                     .addComponent(loginButton))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(exitButton))
         );
 
         registerPanel.setBackground(new java.awt.Color(204, 204, 255));
@@ -181,6 +217,11 @@ public class JFrame1 extends javax.swing.JFrame {
         resetRegisterButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         resetRegisterButton.setForeground(new java.awt.Color(255, 255, 255));
         resetRegisterButton.setText("Reset");
+        resetRegisterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetRegisterButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout registerPanelLayout = new javax.swing.GroupLayout(registerPanel);
         registerPanel.setLayout(registerPanelLayout);
@@ -272,24 +313,17 @@ public class JFrame1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(registerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(registerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void passwordTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordTextActionPerformed
-
     private void userNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameTextActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_userNameTextActionPerformed
-
-    private void resetLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetLoginButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_resetLoginButtonActionPerformed
 
     private void firstNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTextActionPerformed
         // TODO add your handling code here:
@@ -310,6 +344,55 @@ public class JFrame1 extends javax.swing.JFrame {
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_registerButtonActionPerformed
+
+    private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordTextFieldActionPerformed
+
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitButtonActionPerformed
+
+    private void resetRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetRegisterButtonActionPerformed
+
+        firstNameText.setText("");
+        lastNameText.setText("");
+        cityText.setText("");
+        ageText.setText("");
+    }//GEN-LAST:event_resetRegisterButtonActionPerformed
+
+    private void userNameTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userNameTextMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userNameTextMouseClicked
+
+    private void resetLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetLoginButtonActionPerformed
+        userNameText.setText("");
+        passwordTextField.setText("");
+        loginFailedMessage.setVisible(false);
+    }//GEN-LAST:event_resetLoginButtonActionPerformed
+
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        String uName = userNameText.getText();
+        System.out.println("username = "+uName);
+        char pwd[] = passwordTextField.getPassword();
+        String password = new String(pwd);
+        System.out.println("password "+password);
+        
+        if(uName!=null && password!=null && !uName.trim().equals("")&& uName.equalsIgnoreCase("Priya") && password.equals("12345"))
+        {
+            System.out.println("Login Succesful!");
+            Home h1 = new Home(uName);
+            h1.setVisible(true);
+            this.setVisible(false);
+        }
+        else
+        {
+            System.out.println("Login Failed!");
+            loginFailedMessage.setVisible(true);
+            userNameText.setText("");
+            passwordTextField.setText("");
+        }
+    }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -351,6 +434,7 @@ public class JFrame1 extends javax.swing.JFrame {
     private javax.swing.JTextField ageText;
     private javax.swing.JLabel city;
     private javax.swing.JTextField cityText;
+    private javax.swing.JButton exitButton;
     private javax.swing.JLabel firstName;
     private javax.swing.JTextField firstNameText;
     private javax.swing.JLabel gender;
@@ -359,9 +443,10 @@ public class JFrame1 extends javax.swing.JFrame {
     private javax.swing.JLabel lastName;
     private javax.swing.JTextField lastNameText;
     private javax.swing.JButton loginButton;
+    private javax.swing.JLabel loginFailedMessage;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JLabel password;
-    private javax.swing.JTextField passwordText;
+    private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JButton registerButton;
     private javax.swing.JPanel registerPanel;
     private javax.swing.JButton resetLoginButton;
