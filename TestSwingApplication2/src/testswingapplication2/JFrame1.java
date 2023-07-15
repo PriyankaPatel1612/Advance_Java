@@ -39,7 +39,7 @@ public class JFrame1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         loginPanel.setBackground(new java.awt.Color(204, 204, 204));
-        loginPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login Here", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 0, 51))); // NOI18N
+        loginPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login Here", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(0, 0, 255))); // NOI18N
 
         userName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         userName.setText("Username: ");
@@ -96,8 +96,8 @@ public class JFrame1 extends javax.swing.JFrame {
         });
 
         loginFailedMessage.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        loginFailedMessage.setForeground(new java.awt.Color(0, 0, 255));
-        loginFailedMessage.setText("Incorrect! Try Again..");
+        loginFailedMessage.setForeground(new java.awt.Color(255, 0, 51));
+        loginFailedMessage.setText("Login Failed!! Try Again..");
 
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
@@ -148,7 +148,7 @@ public class JFrame1 extends javax.swing.JFrame {
         );
 
         registerPanel.setBackground(new java.awt.Color(204, 204, 255));
-        registerPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Register Here", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(0, 102, 255))); // NOI18N
+        registerPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Register Here", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(0, 51, 255))); // NOI18N
 
         lastName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lastName.setText("Last Name: ");
@@ -313,9 +313,9 @@ public class JFrame1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -342,7 +342,7 @@ public class JFrame1 extends javax.swing.JFrame {
     }//GEN-LAST:event_ageTextActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_registerButtonActionPerformed
 
     private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
