@@ -37,8 +37,8 @@ public class TestHttpSession3 extends HttpServlet {
             out.println("<td>Password: </td>");
             out.println("<td>"+password+"</td>");
             out.println("</tr>");
-            out.println("<td>Last Name: </td>");
-            out.println("<td>"+lastname+"</td>");
+            out.println("<td>First Name: </td>");
+            out.println("<td>"+firstname+"</td>");
             out.println("</tr>");
             out.println("<td>Last Name: </td>");
             out.println("<td>"+lastname+"</td>");

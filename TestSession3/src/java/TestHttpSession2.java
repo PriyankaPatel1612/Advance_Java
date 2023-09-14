@@ -27,7 +27,7 @@ public class TestHttpSession2 extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Test Http Session Page 2</h1>");
-            out.println("<form action=TestHttpSession3 method=post>");
+            out.println("<form action=Home.jsp method=post>");
             out.println("<table>");
             out.println("<tr>");
             out.println("<td>First Name:</td>");
