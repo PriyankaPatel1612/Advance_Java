@@ -37,6 +37,8 @@ public class TestHidden2 extends HttpServlet {
             //using textfield to store username and password for next page
             //out.println("<td><input type=textfield name=username value="+username+" /></td>");
             //out.println("<td><input type=textfield name=password value="+password+" /></td>");
+            
+            //now, it is hidden username and password will not show in browser but sent to next page
             out.println("<td><input type=hidden name=username value="+username+" /></td>");
             out.println("<td><input type=hidden name=password value="+password+" /></td>");
             out.println("</tr>");

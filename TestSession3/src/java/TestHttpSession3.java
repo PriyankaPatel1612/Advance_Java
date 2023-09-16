@@ -27,7 +27,6 @@ public class TestHttpSession3 extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Test Http Session Page 3</h1>");
-      
             out.println("<table>");
             out.println("<tr>");
             out.println("<td>Username:</td>");
