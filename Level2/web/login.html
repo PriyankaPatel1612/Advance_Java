@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .login-card{
+                border: 5px solid white;
+                padding: 50px;
+                margin: 50px 500px;  
+                background-color: #3C99Dc ;
+                border-radius: 5%;
+                font-family: sans-serif;
+                color: white;
+                justify-content: center;
+            }
+            
+        </style>
+    </head>
+    <body bgcolor="#D5F3FE">
+        <div class="login-card">
+            <h2>Login Here</h2>
+            <form action="LoginController" method="post">
+                <table>
+                    <tr>
+                        <td><h3>Username:</h3></td>
+                        <td><input type="text" name="username" placeholder="Enter Username"/></td>
+                    </tr>
+                    <tr>
+                        <td><h3>Password:</h3></td>
+                        <td><input type="password" name="password" placeholder="Enter Password"/></td>
+                    </tr>
+                    <tr>
+                        <td><h3>&nbsp;</h3></td>
+                        <td><input type="submit" value="Login"/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
