@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 public class TestLogin extends HttpServlet {
@@ -18,6 +19,9 @@ public class TestLogin extends HttpServlet {
         PrintWriter out = response.getWriter();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        HttpSession  session = request.getSession(true);
+        session.setAttribute("username",username);
+        session.setAttribute("password", password);
         out.println("<HTML>");
         out.println("<HEAD>");
         out.println("<TITLE>Http Servlet</TITLE>");

@@ -12,6 +12,6 @@
         <title>Home Page</title>
     </head>
     <body>
-        <h1>Welcome User!!</h1>
+        <h1>Welcome <%= session.getAttribute("username") %>!!!</h1>
     </body>
 </html>
